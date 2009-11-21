@@ -166,6 +166,25 @@ describe Post, '#denormalize_comments_count!' do
   end
 end
 
+describe Post, '#apply_filter' do  
+  it 'converts the body text to HTML' do
+    p = Post.new :body => "This is a post."
+    
+    p.apply_filter
+    p.body_html.should == "<p>This is a post.</p>\n"
+  end
+  
+  it 'creates a teaser' do
+    p = Post.new :body => "This is a post.\n\nThis is the second line."
+    p.apply_filter
+    p.teaser_html.should == "<p>This is a post.</p>"
+    
+    p = Post.new :body => "![Image](image.jpg)\n\nThis is the second line."
+    p.apply_filter
+    p.teaser_html.should == "<p>This is the second line.</p>"
+  end
+end
+
 describe Post, 'validations' do
   def valid_post_attributes
     {

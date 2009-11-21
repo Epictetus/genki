@@ -13,5 +13,15 @@ class EnkiFormatter
         end
       )  
     end
+    
+    def format_teaser_as_xhtml (text)
+      html = self.format_as_xhtml(text)
+      paragraphs = html.scan(/<p.*?p>/)
+      if paragraphs.first.match(/<p><img.+?\/><\/p>/) or paragraphs.first.match(/<p><object.+?<\/object><\/p>/)
+        paragraphs[1]
+      else
+        paragraphs.first
+      end
+    end
   end
 end
