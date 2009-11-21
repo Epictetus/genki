@@ -1,6 +1,12 @@
+<% teaser = teaser || false %>
+
 <h2><%= link_to(h(post.title), post_path(post)) %></h2> 
 <div class="entrybody">
-  <%= post.body_html.untaint %>
+  <% if teaser %>
+    <%= post.teaser_html.untaint %>
+  <% else %>
+    <%= post.body_html.untaint %>
+  <% end %>
 </div>
 <div class="meta">
   <ul>
