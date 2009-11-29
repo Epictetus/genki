@@ -15,7 +15,7 @@ atom_feed(
   @posts.each do |post|
    feed.entry(post, :url => post_path(post, :only_path => false), :published => post.published_at, :updated => post.edited_at) do |entry|
       entry.title   post.title
-      entry.content post.body_html, :type => 'html'
+      entry.content EnkiFormatter.format_as_xhtml(post.body, :base_url => config[:url], :teaser => !params[:full]), :type => 'html'
     end
   end
 end

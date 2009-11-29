@@ -9,6 +9,7 @@ describe "/posts/index.atom.builder" do
     mock_post = mock_model(Post,
       :title             => "A post",
       :body_html         => "Posts contents!",
+      :body              => "Posts contents!",
       :published_at      => 1.year.ago,
       :edited_at         => 1.year.ago,
       :slug              => 'a-post',
@@ -20,6 +21,11 @@ describe "/posts/index.atom.builder" do
   end
 
   it "should render list of posts" do
+    render "/posts/index.atom.builder"
+  end
+  
+  it "should render list of full-text posts" do
+    assigns[:full] = 'yes'
     render "/posts/index.atom.builder"
   end
 
