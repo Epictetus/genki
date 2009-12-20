@@ -10,7 +10,7 @@
   <%= stylesheet_link_tag 'application' %>
   <%= stylesheet_link_tag 'prettify' %>
   <%= javascript_include_tag 'jquery' %>
-  <%= javascript_include_tag 'prettyprint' %>
+  <%= javascript_include_tag 'prettify' %>
   <%= open_id_delegation_link_tags(h(config[:open_id_delegation, :server]), h(config[:open_id_delegation, :delegate])) if config[:open_id_delegation] %>
   <%= yield(:head) %>
 </head>
