@@ -11,7 +11,7 @@ class EnkiFormatter
           unless language
             "<pre><code>#{code}</code></pre>"
           else
-            "<pre class=\"prettyprint #{language}\"><code>#{code}</code></pre>"
+            "<pre><code class=\"#{language}\">#{code}</code></pre>"
           end
         end
       )

@@ -1,0 +1,24 @@
+pre { background: #222; color: white; font-size: 13px; padding: 10px 0 20px 10px; }
+code span.comment { color: #777; }
+code span.string { color: #a5c254; }
+code span.symbol { color: #6d9cbe; }
+code span.module_class { color: #e45c47; }
+code span.variable { color: #d0d0fb; }
+code span.keywords { color: #ffa752; }
+code span.global { color: #6d9cbe; }
+
+code.html span { color: #fff; }
+code.html span.tag,
+code.haml span.tag,
+code.html span.anglebrackets { color: #e8bf6a; }
+code.html span.attribute { color: #e8bf6a; }
+code.html span.string { color: #a5c254; }
+code.html span.comment { color: #777; }
+code.html span.doctype,
+code.haml span.doctype { color: #c12e00; }
+
+code.css .selectors { color: #e8bf6a; }
+code.css .properties { color: #6d9cbe; }
+
+code.shell { color: #ccc; }
+code.shell span.keywords { color: #fff; }
